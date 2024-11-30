@@ -19,12 +19,13 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'staff') {
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <p><?php
-        
-            // Staff-specific content here
-            echo "Staff username: " . $_SESSION['username'] . " Add Staff Interface";   
-
-        ?></p>
+        <h1>Welcome, <?php echo $_SESSION['username']; ?></h1>
+        <a href="view_appointments.php">View Appointments</a>
+        <a href="schedule_appointment.php">Schedule Appointment</a>
+        <a href="cancel_appointment.php">Cancel Appointment</a>
+        <a href="view_patient.php">View Patient</a>
+        <a href="logout.php">Logout</a>
+    </body>
         <!-- Logout Button -->
         <form action="logout.php" method="POST">
             <button type="submit">Logout</button>
