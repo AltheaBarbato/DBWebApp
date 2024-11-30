@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Appointment Booking System</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <h1>Appointment Booking System</h1>
+
+    <p>Welcome to our appointment booking system.</p>
+
+    <div class="button-container">
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <?php if ($_SESSION['role'] == 'admin'): ?>
+                <a href="admin-view.php">Admin Dashboard</a>
+            <?php else: ?>
+                <a href="staff.php">Staff Dashboard</a>
+            <?php endif; ?>
+        <?php else: ?>
+            <a href="login.php">Login</a>
+        <?php endif; ?>
+    </div>
+</body>
+</html>
